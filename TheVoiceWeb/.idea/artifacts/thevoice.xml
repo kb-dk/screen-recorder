@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="thevoice">
+    <output-path>$PROJECT_DIR$/out/artifacts/thevoice</output-path>
+    <root id="archive" name="thevoice.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TheRealVoiceWeb" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/web/style.css" />
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+    </root>
+  </artifact>
+</component>

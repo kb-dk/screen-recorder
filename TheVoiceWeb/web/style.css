@@ -1,0 +1,141 @@
+/* Style sheet for http://www.w3.org/Style/CSS and related pages.
+
+Graphic design by Divya Manian (December 2010), with help from
+fantasai, based on graphic elements of the W3C home page of 2010.
+Adapted by Bert Bos <bert@w3.org> (April 2011)
+
+Copyright © 2010 Divya Manian (design)
+Copyright © 2011 W3C (code), see
+http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+
+*/
+
+@font-face {
+  font-family: My Gill Sans;
+  font-style: normal;
+  font-weight: normal;
+  src: url(../GILLSAN3.eot) format("embedded-opentype"),
+    url(../GILLSAN3.woff) format("woff")}
+
+@font-face {
+  font-family: My Gill Sans;
+  font-style: oblique;
+  font-weight: normal;
+  src: url(../GILLSAN2.eot) format("embedded-opentype"),
+    url(../GILLSAN2.woff) format("woff")}
+
+@font-face {
+  font-family: My Gill Sans;
+  font-style: normal;
+  font-weight: 700;
+  src: url(../GILLSAN1.eot) format("embedded-opentype"),
+    url(../GILLSAN1.woff) format("woff")}
+
+@font-face {
+  font-family: My Gill Sans;
+  font-style: oblique;
+  font-weight: 700;
+  src: url(../GILLSAN0.eot) format("embedded-opentype"),
+    url(../GILLSAN0.woff) format("woff")}
+
+@font-face {
+  font-family: OFL Sorts Mill Goudy;
+  font-style: normal;
+  font-weight: normal;
+  src: url(OFLGoudyStM-webfont.eot) format("embedded-opentype"),
+    url(OFLGoudyStM-webfont.woff) format("woff"),
+    url(OFLGoudyStM-webfont.svg) format("svg") }
+
+
+html {background: #DCE3E6}
+
+body {
+  columns: 30em;
+  column-gap: 20px;
+  padding: 0 20px;
+  margin: 6em 3% 19em 3%;
+  background: #fff;
+  font: 1em/1.3 Gill Sans, My Gill Sans, sans-serif;
+  color: #555;
+  position: relative;
+  box-shadow: 0 .3em 1em #000 }
+
+/* Home page has floats instead of columns */
+.portal {column-width: auto}
+
+/* English pages need no space for the translation warning */
+body:lang(en) {margin-top: 2em}
+
+a {color: #0C3D5F; text-decoration: none}
+:visited {color: #609}
+a:hover {text-decoration: underline}
+
+
+td {vertical-align: baseline}
+th {vertical-align: bottom; text-align: left}
+
+
+h1, h2, .aside h3, .feed {
+  letter-spacing: .051em;
+  font: normal 1.5em/1.1 OFL Sorts Mill Goudy, Georgia, serif }
+
+h1 {
+  column-span: all;
+  margin: 0 -20px 3em -20px; /* Room below for #banner menu */
+  padding: .6em 1em;
+  height: 3.3em;
+  border-left: solid transparent 90px; /* Room for W3C logo */
+  border-right: solid transparent 110px; /* Room for language link */
+  color: #666;
+  background: #eee }
+
+h1 em {font-style: normal; display: block}
+
+h3 {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  border-bottom: thin solid }
+
+
+h2, .aside h3 {text-transform: uppercase}
+h2, .feed {display: inline}
+
+
+
+input {border-radius: .25em; padding: .2em .5em; border: thin solid #ddc}
+
+button {border: 0}
+button img {vertical-align: middle}
+
+
+td {
+  padding: 8px;
+  margin: 0px;
+  text-align: center;}
+
+th {
+    padding: 8px;
+    margin: 0px;
+    text-align: center;}
+
+
+
+
+@media all and (min-width: 50em) {
+
+  h1 {height: 2.2em}
+
+}
+
+@media all and (max-width: 33em) {
+  h1 {
+    font-size: 1em;
+    letter-spacing: normal;
+    margin-bottom: 4.5em;
+    height: 5.55em }
+
+}
+
+tr:nth-child(even) {background: #EEE}
+tr:nth-child(odd) {background: #DCE3E6}
