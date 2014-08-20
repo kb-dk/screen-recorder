@@ -61,8 +61,8 @@ ffmpeg bliver brugt af record scriptet som ser således ud:
 
 ```bash
 #! /bin/bash 
-NAME="/home/netlab/thevoice\_project/tempRecording/\$1\$(date +'%d-%m-%y\_%H.%M')" 
-ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 30 -s \$(xwininfo -root | grep 'geometry'| awk '{print \$2;}') -i :0.0 -acodec pcm\_s16le -vcodec libx264 -preset ultrafast -crf 0 -y \$NAME.mkv \> ffmpeg.log 2\>&1
+NAME="/home/netlab/thevoice_project/tempRecording/$1$(date +'%d-%m-%y_%H.%M')" 
+ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 30 -s \$(xwininfo -root | grep 'geometry'| awk '{print $2;}') -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -crf 0 -y $NAME.mkv > ffmpeg.log 2>&1
 ```
  
 
@@ -90,16 +90,16 @@ hvor run.sh indeholder
 ```bash
 #!/bin/bash 
 set +x 
-#RUNNING=\$(ps -ef | grep "src/run.sh" | grep -v "grep" | wc -l) 
+#RUNNING=$(ps -ef | grep "src/run.sh" | grep -v "grep" | wc -l) 
 echo "Starting Screen Recorder Process..." 
 echo "Running..." 
-#while [ \$RUNNING -lt 1 ] 
-echo "\$DISPLAY" 
-echo "Starting daemon on \$DISPLAY" \>\> logging.log 
-while [ \$DISPLAY == ":0" ] 
+#while [ $RUNNING -lt 1 ] 
+echo "$DISPLAY" 
+echo "Starting daemon on \$DISPLAY" >> logging.log 
+while [ $DISPLAY == ":0" ] 
 do 
-	java Scheduler \>\> logging.log 2\>&1 
-	echo "Crashed \$(date)" \>\> logging.log 
+	java Scheduler >> logging.log 2>&1 
+	echo "Crashed \$(date)" >> logging.log 
 done 
 set -x
 ```
@@ -113,8 +113,8 @@ Mappen vi angav i Constants.java indeholder så en masse forskellige ting nu. De
 Når record.sh er færdig med at optage bliver filmen flyttet fra tempRecording til finishedJobs. Der er så lavet et symlink fra tomcat serverens webapp mappe til mappen med endelig film. På den måde kan man gennem tomcat serveren både tilgå filmene og servere dem til en bruger.
 
 ```bash
-netlab@netlab-recorder:/webapps\$ ls -la 
-video -\> /home/netlab/thevoice\_project/finishedjobs/
+netlab@netlab-recorder:/webapps$ ls -la 
+video -> /home/netlab/thevoice_project/finishedjobs/
 ```
 
  
